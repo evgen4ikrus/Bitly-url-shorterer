@@ -5,8 +5,6 @@ from urllib.parse import urlparse
 import requests
 from dotenv import load_dotenv
 
-load_dotenv()
-
 
 def get_link():
     parser = argparse.ArgumentParser(
@@ -59,6 +57,7 @@ def is_bitlink(token, link):
 
 
 def main():
+    load_dotenv()
     token = os.environ["BITLY_TOKEN"]
     user_input_url = get_link()
     try:
